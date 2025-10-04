@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>i'm Vinzz</title>
+  <meta name="description" content="Tautan cepat VinzzSlayer — modern, responsive, dan keren." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root{
+      --bg1: #0f172a;
+      --glass: rgba(255,255,255,0.06);
+      --accent: linear-gradient(135deg,#7c3aed,#06b6d4);
+      --card-radius: 18px;
+      --max-width: 460px;
+      --text-soft: rgba(255,255,255,0.78);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body {
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+      background: radial-gradient(800px 400px at 10% 15%, rgba(124,58,237,0.12), transparent),
+                  radial-gradient(700px 350px at 90% 85%, rgba(6,182,212,0.08), transparent),
+                  var(--bg1);
+      color: #fff;
+      padding: 28px;
+    }
+
+    /* STATUS BAR */
+    .status-bar {
+  position: fixed;
+  top: 8px;
+  right: 16px;
+  left: auto;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(6px);
+  z-index: 9999; /* pastikan selalu di atas */
+  width: fit-content;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+    .status-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .battery i {
+      font-size: 16px;
+    }
+
+    .card{
+      backdrop-filter: blur(8px) saturate(120%);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius:var(--card-radius);
+      padding:26px;
+      margin-bottom:20px;
+      box-shadow: 0 6px 30px rgba(2,6,23,0.6);
+    }
+    header{display:flex;align-items:center;gap:14px}
+    .avatar{width:110px;height:110px;border-radius:25px;overflow:hidden;border:1px solid rgba(255,255,255,0.06)}
+    .avatar img{width:100%;height:100%;object-fit:cover}
+    .title h1{margin:0;font-size:20px}
+    .title p{margin:2px 0 0;font-size:13px;color:var(--text-soft)}
+    .bio{margin-top:14px;font-size:14px;color:var(--text-soft)}
+    .links{display:flex;flex-direction:column;gap:12px;margin-top:18px}
+    .link-btn{
+      display:flex;align-items:center;gap:12px;padding:14px;border-radius:12px;
+      text-decoration:none;font-weight:600;color:#fff;
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.04);
+      transition:transform .12s ease, box-shadow .12s ease;
+    }
+    .link-btn:hover{box-shadow:0 8px 30px rgba(7,12,29,0.6);transform:translateY(-4px)}
+    .link-icon{
+      width:36px;height:36px;border-radius:10px;background:var(--glass);
+      display:flex;align-items:center;justify-content:center;font-size:18px;
+    }
+    .link-content{flex:1;display:flex;flex-direction:column}
+    .link-content .name{font-size:15px}
+    .link-content .meta{font-size:12px;color:var(--text-soft);margin-top:2px}
+    footer{margin-top:18px;font-size:12px;color:var(--text-soft);text-align:center}
+    .next-button {
+      background: linear-gradient(135deg, #00c9ff, #92fe9d);
+      color: #000;
+      font-weight: bold;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      min-width: 120px;
+      text-align: center;
+    }
+    .next-button:hover { transform: scale(1.05); }
+  
+  .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+  
+  .product {
+      background: rgba(255,255,255,0.05);
+      border-radius: 12px;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .product-img {
+      width: 100px;
+      height: auto;
+      margin-bottom: 0.5rem;
+    }
+
+    .product h3 {
+      margin: 0.5rem 0;
+    }
+
+    .product p {
+      margin-bottom: 1rem;
+      color: #ddd;
+      font-size: 0.9rem;
+    }
+
+    .product .next-button {
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+  
+
+  /* Tambahkan ini */
+  .button-group {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap; /* agar responsive di layar kecil */
+    margin-top: 16px;
+  }
+
+  .button-group .next-button {
+    flex: 1;
+    text-align: center;
+    min-width: 100px;
+    max-width: 120px;
+  }
+
+  </style>
+</head>
+<body>
+  <!-- STATUS BAR -->
+  <div class="status-bar">
+    <div class="status-item">
+      <i class="fa-regular fa-clock"></i>
+      <span id="clock">00:00</span>
+    </div>
+    <div class="status-item battery">
+      <i id="battery-icon" class="fa-solid fa-battery-half"></i>
+      <span id="battery-level">--%</span>
+    </div>
+  </div>
+
+  <!-- PROFIL -->
+  <main class="container">
+    <section class="card">
+      <header>
+        <div class="avatar"><img src="https://files.catbox.moe/4hbbq5.png" alt="Avatar"></div>
+        <div class="title"><h1>i'm Vinzz</h1><p>Developer • VinzzOfficial</p></div>
+      </header>
+      <p class="bio">Selamat datang! Klik salah satu tombol untuk WhatsApp, YouTube, TikTok, Instagram, Telegram, atau Website saya.</p>
+      <div class="links">
+        <a class="link-btn" href="https://wa.me/6283832320022" target="_blank">
+          <div class="link-icon"><i class="fab fa-whatsapp"></i></div>
+          <div class="link-content"><div class="name">Chat WhatsApp</div><div class="meta">Klik untuk pesan</div></div>
+        </a>
+        <a class="link-btn" href="https://www.youtube.com/@VinzzOfficial_1" target="_blank">
+          <div class="link-icon"><i class="fab fa-youtube"></i></div>
+          <div class="link-content"><div class="name">YouTube Channel</div><div class="meta">Subscribe sekarang</div></div>
+        </a>
+        <a class="link-btn" href="https://tiktok.com/@vinzzofficial.github.io" target="_blank">
+          <div class="link-icon"><i class="fab fa-tiktok"></i></div>
+          <div class="link-content"><div class="name">TikTok</div><div class="meta">Follow Tiktok Sekarang</div></div>
+        </a>
+        <a class="link-btn" href="https://www.instagram.com/vinzzofficial.github.io" target="_blank">
+          <div class="link-icon"><i class="fab fa-instagram"></i></div>
+          <div class="link-content"><div class="name">Instagram</div><div class="meta">Like Sorotan</div></div>
+        </a>
+        <a class="link-btn" href="https://t.me/VinzzOfficial" target="_blank">
+          <div class="link-icon"><i class="fab fa-telegram"></i></div>
+          <div class="link-content"><div class="name">Telegram</div><div class="meta">Hubungi Via Telegram</div></div>
+        </a>
+      </div>
+      <h1></h1>
+      <div class="button-group">
+  <button class="next-button" onclick="showSection('open')">open</button>
+  <button class="next-button" onclick="showSection('benefit')">benefit</button>
+  <button class="next-button" onclick="showSection('payment')">payment</button>
+</div>
+    </section>
+  </main>
+
+    <!-- OPEN list -->
+    <div class="main-content" id="open" style="display:none; text-align:center;">
+  <main class="container">
+    <section class="card">
+      <header>
+        <div class="avatar"><img src="https://files.catbox.moe/0k0935.jpg" alt="Avatar"></div>
+        <div class="title"><h1>VINZZ OPEN</h1></div>
+      </header>
+      <h4>-----------------------------------</h4>
+      
+      <body>
+        <ul>
+        <li>OPEN MC</li>
+        <li>OPEN JP</li>
+        <li>OPEN RESS</li>
+        <li>OPEN ADMIN</li>
+        <li>OPEN OWNER</li>
+        <li>OPEN PT BIASA</li>
+        <li>OPEN PT KIRI</li>
+        <li>OPEN PT KANAN</li>
+        <li>OPEN PT PRIBADI</li>
+        <li>OPEN SEWA BOT WA</li>
+        <li>OPEN SUNTIK CH WA</li>
+        <li>OPEN UP DANABISNS</li>
+        <li>OPEN SUNTIK SOSMED</li>
+        <li>OPEN NOKOS ALL REGION</li>
+        <li>OPEN JASA BUAT WEBSITE</li>
+        <li>OPEN JASA PENGAMAN AKUN</li>
+        <li>OPEN SC BUG, PUSH, CPANEL</li>
+        </ul>
+      </body>
+       
+      
+      <button class="next-button" onclick="backToMain()">Back</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- BENEFIT -->
+  <div class="main-content" id="benefit" style="display:none; text-align:center;">
+  <main class="container">
+    <section class="card">
+      <header>
+        <div class="avatar"><img src="https://files.catbox.moe/1e0s1b.png" alt="Avatar"></div>
+        <div class="title"><h1>BENEFIT NYA</h1></div>
+      </header>
+      <h4>-----------------------------------</h4>
+      <h4>BENEFIT RESELLER</h4>
+      <ul><li>‌BISA JUALAN PANEL, BISA CRATE PANEL SEPUASNYA, PERMANEN NO KIK, BISA BUG ORANG SEPUASNYA, BISA OPEN BUG, DI JAMIN BALIK MODAL</li></ul>
+      <h4>BENEFIT ADMIN</h4>
+      <ul><li>JADI ADMIN DI GRUP, BISA OPEN RESELER, ‌BISA JUALAN PANEL, BISA CRATE PANEL SEPUASNYA, PERMANEN NO KIK, BISA BUG ORANG SEPUASNYA, BISA OPEN BUG, DI JAMIN BALIK MODAL</li></ul>
+      <h4>BENEFIT OWNER</h4>
+      <ul><li>BISA OPEN ADMIN,BIAA OPEN RESS, JADI ADMIN DI GRUP BISA JUALAN PANEL, BISA CRATE PANEL SEPUASNYA, PERMANEN NO KIK, BISA BUG ORANG SEPUASNYA, BISA OPEN BUG, DI JAMIN BALIK MODAL</li></ul>
+      <h4>BENEFIT PT BIASA</h4>
+      <ul><li>BISA OPEN OWNER, BISA OPEN ADMIN, BISA OPEN RESS, JADI ADMIN DI GRUP, BISA JUALAN PANEL, BISA CRATE PANEL SEPUASNYA, PERMANEN NO KIK, BISA BUG ORANG SEPUASNYA, BISA OPEN BUG, DI JAMIN BALIK MODAL</li></ul>
+      <h4>BENEFIT PT KIRI</h4>
+      <ul></li>BISA OPEN PT BIASA, BISA OPEN OWNER, BISA OPEN ADMIN, BISA OPEN RESS, JADI ADMIN DI GRUP, BISA JUALAN PANEL, BISA CRATE PANEL SEPUASNYA, PERMANEN NO KIK, BISA BUG ORANG SEPUASNYA, BISA OPEN BUG, DI JAMIN BALIK MODAL</li></ul>
+      <h4>BENEFIT PT KANAN</h4>
+      <ul><li>BISA OPEN PT BIASA, BUSA OPEN PT KIRI, BISA OPEN PT KANAN, BISA OPEN OWNER, BISA OPEN ADMIN, BISA OPEN RESS, BISA JUALAN PANEL, JADI ADMIN DI GRUP, BISA CRATE PANEL SEPUASNYA, PERMANEN NO KIK, BISA BUG ORANG SEPUASNYA, BISA OPEN BUG, DI JAMIN BALIK MODAL</li></ul>
+      <h4>BENEFIT PT PRIB</h4>
+      <ul><li>BISA OPEN PT KANAN , B‌ISA OPEN PT KIRI, B‌‌ISA OPEN PT BIASA, BISA OPEN OWNER, BISA OPEN ADMIN, BISA OPEN RESS, BISA JUALAN PANEL, BISA CRATE PANEL SEPUASNYA, PERMANEN NO KIK, BISA BUG ORANG SEPUASNYA, BISA OPEN BUG, DI JAMIN BALIK MODAL</li></ul>
+      <h4>BENEFIT SEWA BOT</h4>
+      <ul><li>BISA PUSHKONTAK, BISA BUG, BISA CRATE PANEL TERGANTUNG BOT YANG DI SEWAKAN </li></ul>
+      <h4>BENEFIT SUNTIK CH</h4>
+      <ul><li>PNGIKUT FRESH, PERMANEN, MURMER ANTI TURKI</li></ul>
+      <h4>BENEFIT UP DABIS</h4>
+      <ul><li>BISA DAPAT QRIS ALL PAYMEN, BISA DI JUAL LAGI</li></ul>
+      <h4>BENEFIT SUNTIK SOSMED</h4>
+      <ul><li>PNGIKUT PERMANEN FULL INDO MURMER</li></ul>
+      <h4>BENEFIT NOKOS</h4>
+      <ul><li>NOKOS UDH DI SV 1 BULAN ADA, MAU YANG FRESH JUGA ADA</li></ul>
+      <h4>BENEFIT BUY JASA WEBSITE</h4>
+    <ul><li>BEBAS REQ WEBSITE APA TERGANTUNG DUIT LU</li></ul>
+      <h4>BENEFIT JASPENG</h4>
+      <ul><li>AKUN ANTI HB, AMAN 100%, AKUN DI HB REFF HARGA AKUN SAMA HARFA JASPENG</li></ul>
+      <h4>BENEFIT BUY SC</h4>
+    <ul><li>BISA BUG FREE FUNC KALO BUY SC BUG, BISA PUSHKONTAK ANTI KENON, BISA CRATE PANEL, TERGANTUNG LU BUY SC NYA.</li></ul>
+      <button class="next-button" onclick="backMain()">Back</button>
+      </div>
+   </section>
+  </main>
+
+  <!-- PAYMENT -->
+  <div class="main-content" id="payment" style="display:none; text-align:center;">
+  <main class="container">
+    <section class="card">
+        <h1>Vinzz Official 💸</h1>
+        <div class="product">
+          <img src="https://files.catbox.moe/bd4mip.jpg" class="product-img" alt="Dana">
+          <h3>Dana</h3>
+          <p>A/N : T****H</p>
+          <button class="next-button" onclick="copyNumber('083804353600')">Copy</button>
+        </div>
+        <div class="product">
+          <img src="https://files.catbox.moe/u8gvag.jpg" class="product-img" alt="OVO">
+          <h3>OVO</h3>
+          <p>A/N : V****</p>
+          <button class="next-button" onclick="copyNumber('083804353600')">Copy</button>
+        </div>
+        <div class="product">
+          <img src="https://files.catbox.moe/wfdj0o.jpg" class="product-img" alt="GoPay">
+          <h3>GoPay</h3>
+          <p>A/N : V****</p>
+          <button class="next-button" onclick="copyNumber('083804353600')">Copy</button>
+        </div>
+        <div style="margin-top: 3rem; text-align: center;">
+          <h2>Scan QRIS Untuk Pembayaran</h2>
+          <img src="https://files.catbox.moe/jsxedf.jpg" alt="QRIS" style="max-width: 300px; width: 100%; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);" />
+        </div>
+      <p></p>
+        <button class="next-button" onclick="back()">Back</button>
+      <footer><div class="badge">Jika ingin tf - tf aja dulu jangan lupa ss bukti transaksi dan sebutkan apa yang lu bli nomer ada di atas chat tele atau wa aja</div></footer>
+      </div>
+    <footer><div class="badge">🀄</div></footer>
+    </section>
+  </main>
+  
+  <script>
+    function showSection(id) {
+      document.getElementById(id).style.display = "block";
+    }
+    function backToMain() {
+      document.getElementById("open").style.display = "none";
+    }
+    function backMain() {
+      document.getElementById("benefit").style.display = "none";
+    }
+    function back() {
+      document.getElementById("payment").style.display = "none";
+    }
+    function copyNumber(num) {
+      navigator.clipboard.writeText(num);
+      alert("Nomor berhasil disalin: " + num);
+    }
+  </script>
+  
+  <script>
+    // Jam real-time
+    function updateClock() {
+      const now = new Date();
+      const h = String(now.getHours()).padStart(2, '0');
+      const m = String(now.getMinutes()).padStart(2, '0');
+      document.getElementById('clock').textContent = `${h}:${m}`;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // Status Baterai
+    if (navigator.getBattery) {
+      navigator.getBattery().then(function(battery) {
+        function updateBattery() {
+          const level = Math.round(battery.level * 100);
+          document.getElementById("battery-level").textContent = level + "%";
+
+          const icon = document.getElementById("battery-icon");
+          if (level > 80) icon.className = "fa-solid fa-battery-full";
+          else if (level > 50) icon.className = "fa-solid fa-battery-three-quarters";
+          else if (level > 20) icon.className = "fa-solid fa-battery-half";
+          else icon.className = "fa-solid fa-battery-quarter";
+        }
+        updateBattery();
+        battery.addEventListener("levelchange", updateBattery);
+      });
+    }
+  </script>
+</body>
+</html>
